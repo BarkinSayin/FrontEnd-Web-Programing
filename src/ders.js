@@ -277,3 +277,145 @@
 
 // const personAge="age";
 // console.log(person[personAge]);
+// const students = ["Berkay", "Cenk", "Mert", "Orkun", "Hicran", "Buse", "Onder"];
+
+// const numbers = [
+//   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+// ];
+
+// const ourOwnFilter = (arr, callbackFn) => {
+//   const newArr = [];
+//   for (let index = 0; index < arr.length; index++) {
+//     const callbackResult = callbackFn(arr[index], index);
+//     if (callbackResult === undefined) {
+//     } else if (!(callbackResult % 2)) {
+//       newArr.push(callbackResult);
+//     }
+//   }
+//   return newArr;
+// };
+
+// const doubleNumbers = (num1, index) => {
+//   if (index % 2 === 0) {
+//     console.log(`${index}: ${num1}`);
+//     return num1;
+//   }
+// };
+// console.log(ourOwnFilter(students, doubleNumbers));
+
+// const ourOwnFilter =(arr,callback)=>{
+//     const newArr=[];
+//     for (let index = 0; index < arr.length; index++) {
+//         if (callback(arr[index],index)) {
+//             newArr.push(arr[index])
+//         };
+
+//     }
+//     return newArr;
+// }
+
+// const ourOwnFilterStudents=(student,index)=>index%2===0
+
+// console.log(ourOwnFilter(students,ourOwnFilterStudents));
+"use strict";
+
+// function Character(nickName,characterClass,level,subClass){
+//     this.nickName=nickName;
+//     this.characterClass=characterClass;
+//     this.level=level;
+//     this.subClass=subClass
+
+//     Object.seal(this)
+// }
+
+// const newCharacter=new Character("DeepFreeze","Mage",80,"Frost Mage");
+// // delete newCharacter.nickName;
+// console.log(newCharacter);
+
+// const newArr=[]
+// function add(obj){
+//     if (obj instanceof Character) {
+//         newArr.push(obj);
+//     }
+//     else{
+//         throw "Bu Character nesnesine ait değil"
+//     }
+// }
+// add(newCharacter)
+// // add("Mürsel")
+// console.log(newArr);
+
+// Character.prototype.msg="Bu film vizyonda değil"
+
+// Character.prototype.fn= ()=>{
+//     console.log(this.nickName);
+// }
+// console.log(newCharacter.msg);
+
+// function Person(firstName,lastName,age,favoriteMovie,phone){
+//     this.firstName=firstName;
+//     this.lastName=lastName;
+//     this.age=age;
+//     this.favoriteMovie=favoriteMovie;
+//     this.phone=phone;
+// }
+
+// const newPerson= new Person("Barkın","Sayın",24,"Harry Potter","05246946789")
+// console.log(newPerson);
+
+// const newPerson2= new Person("Orkun","Durmaz",34,"Friends","02564325678")
+// console.log(newPerson2);
+
+class Person {
+  #firstName;
+  #lastName;
+  #password = "1234";
+  constructor(firstName, lastName, age) {
+    this.#firstName = firstName;
+    this.#lastName = lastName;
+    this.age = age;
+    this.fullName = () => `${this.#firstName} ${this.#lastName}`;
+  }
+  get getfullName() {
+    return `${this.#firstName} ${this.#lastName}`;
+  }
+  set setPassword(password) {
+    this.#password = password;
+  }
+}
+
+const newPerson = new Person("Barkın", "Sayın", 24);
+console.log(newPerson.fullName());
+newPerson.setPassword = "4567";
+console.log(newPerson);
+// console.log(newPerson.firstName);
+// console.log(newPerson.age);
+// console.log(newPerson.getfullName);
+
+// const log=function(num){
+//     console.log(num);
+// }
+// const add=function(num1,num2){
+//     return num1+num2
+// }
+// const divide=function(num1,num2){
+//     return num1/num2
+// }
+// const calculate=function(num1,num2,calculateCallback,logCallback){
+//     let result=calculateCallback(num1,num2);
+//     logCallback(result);
+// }
+// calculate(30,15,divide,log)
+
+const numbers = [1, 2, 3, 4, 5];
+
+const total = numbers.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+
+console.log(total);
+
+// const fruits=[5,43,37777,17,85];
+// fruits.sort();
+// console.log(fruits);
