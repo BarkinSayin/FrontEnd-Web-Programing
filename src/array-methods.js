@@ -163,7 +163,7 @@ const students = [
 // console.log(findBarkin);
 
 //sort
-//default olarak unicode 
+//default olarak unicode
 
 // const fruits=["a","b","c",[1,2,3],{},["a","b"],1,3,32,23,-3,null,undefined,true];
 // fruits.sort();
@@ -189,11 +189,20 @@ const students = [
 
 //mini ödev
 
-const numbers = [3, 9, 7, 6, 8, 10, 20, 23, 89, 97];
+// const numbers = [3, 9, 7, 6, 8, 10, 20, 23, 89, 97];
 
-const filteredNumbers = numbers.filter((num) => !(num % 2));
+// const filteredNumbers = numbers.filter((num) => !(num % 2));
 
-const reducedDoubleNumbers = filteredNumbers.reduce((acc, num) => acc + num*5, 0);
+// const reducedDoubleNumbers = filteredNumbers.reduce((acc, num) => acc + num*5, 0);
 
-console.log(reducedDoubleNumbers);
+// console.log(reducedDoubleNumbers);
 
+//deneme
+
+const findTeacher = students.findIndex(
+  (student) =>
+    student.instructors.some(
+      (instructor) => instructor.fullName === "Hicran Ertugral"
+    )
+);
+console.log(findTeacher);
