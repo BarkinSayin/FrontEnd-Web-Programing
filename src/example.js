@@ -247,3 +247,12 @@ const birthDayWithString = users.map((user) => {
 
 console.log(birthDayWithString);
 
+//3.soru Her kullanıcı için tam ad ve doğum tarihini içeren cümleyi oluşturunuz.Örneğin:"John DOE 11-04-1990 tarihinde doğmuştur."
+const arrayForMessage=[]
+for (let i = 0; i < formatedNames.length; i++) {
+    const name=formatedNames[i]
+    const birthDay=birthDayWithString[i]
+    arrayForMessage.push(`${name} ${birthDay} tarihinde doğmuştur.`)
+}
+
+console.log(arrayForMessage);
